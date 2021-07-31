@@ -1,0 +1,319 @@
+.ubody
+{
+    background: #cc2b5e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #753a88, #cc2b5e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+border-radius: 5px;
+}
+.dbody{
+background: #9796f0;
+/* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);
+/* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fbc7d4, #9796f0);
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+border-radius: 5px;
+}
+.wish {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 4%;
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    color: red;
+    letter-spacing: 0.1em;
+    font-family: 'Pacifico', cursive;
+    background: -webkit-linear-gradient(#ffff00, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 3s infinite ease-in-out;
+}
+
+@-webkit-keyframes hue {
+    0% {
+        -webkit-filter: hue-rotate(0deg);
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        -webkit-filter: hue-rotate(360deg);
+        transform: scale(1.2) rotate(5deg);
+    }
+}
+
+.cake {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: 15%;
+    margin-left: -125px;
+}
+
+.plate {
+    position: absolute;
+    width: 290px;
+    height: 130px;
+    bottom: -10px;
+    left: -15px;
+    background-color: #ccc;
+    border-radius: 25%;
+    box-shadow: 0 5px 0 0 #000;
+}
+
+.cake>* {
+    position: absolute;
+}
+
+.layer {
+    position: absolute;
+    display: block;
+    width: 250px;
+    height: 100px;
+    border-radius: 25%;
+    background-color: #2a0a0a;
+    border: 3px solid #fff;
+    box-shadow:
+        0 15px 0 0 #2a0a0a,
+        0 30px 0 0 #2a0a0a,
+        0 33px 0 0 #fff,
+        0 45px 0 0 #2a0a0a,
+        0 60px 0 0 #2a0a0a,
+        0 63px 0 0 #fff,
+        0 75px 0 0 #2a0a0a,
+        0 90px 0 0 #2a0a0a;
+}
+
+.icing {
+    top: 3px;
+    left: 3px;
+    background-color: #fff;
+    border: 5px dotted #2a0a0a;
+    width: 240px;
+    height: 90px;
+    border-radius: 25%;
+}
+
+.name {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    color: #2a0a0a;
+    font-family: 'Pacifico', cursive;
+}
+
+.candle1 {
+    z-index: 10;
+    width: 10px;
+    height: 50px;
+    background-color: #fe2e2e;
+    border-radius: 4px;
+    top: -25px;
+    left: 50%;
+    margin-left: -8px;
+}
+
+.flame1 {
+    border-bottom-left-radius: 45% 35%;
+    border-bottom-right-radius: 45% 35%;
+    box-shadow: 0 -15px 2px 2px #ffc205;
+    background-color: yellow;
+    border-radius: 50%;
+    height: 30px;
+    width: 5px;
+    top: -30px;
+    left: 30%;
+    position: absolute;
+}
+
+.candle2 {
+    z-index: 10;
+    width: 10px;
+    height: 50px;
+    background-color: #fe2e2e;
+    border-radius: 4px;
+    top: -25px;
+    left: 80%;
+    margin-left: -8px;
+}
+
+.flame2 {
+    border-bottom-left-radius: 45% 35%;
+    border-bottom-right-radius: 45% 35%;
+    box-shadow: 0 -15px 2px 2px #ffc205;
+    background-color: yellow;
+    border-radius: 50%;
+    height: 30px;
+    width: 5px;
+    top: -30px;
+    left: 30%;
+    position: absolute;
+}
+
+.candle3 {
+    z-index: 10;
+    width: 10px;
+    height: 50px;
+    background-color: #fe2e2e;
+    border-radius: 4px;
+    top: -25px;
+    left: 20%;
+    margin-left: -8px;
+}
+
+.flame3 {
+    border-bottom-left-radius: 45% 35%;
+    border-bottom-right-radius: 45% 35%;
+    box-shadow: 0 -15px 2px 2px #ffc205;
+    background-color: yellow;
+    border-radius: 50%;
+    height: 30px;
+    width: 5px;
+    top: -30px;
+    left: 30%;
+    position: absolute;
+}
+
+.candle4 {
+    z-index: 10;
+    width: 10px;
+    height: 50px;
+    background-color: #fe2e2e;
+    border-radius: 4px;
+    top: 15px;
+    left: 15%;
+    margin-left: -8px;
+}
+
+.flame4 {
+    border-bottom-left-radius: 45% 35%;
+    border-bottom-right-radius: 45% 35%;
+    box-shadow: 0 -15px 2px 2px #ffc205;
+    background-color: yellow;
+    border-radius: 50%;
+    height: 30px;
+    width: 5px;
+    top: -30px;
+    left: 30%;
+    position: absolute;
+}
+
+.candle5 {
+    z-index: 10;
+    width: 10px;
+    height: 50px;
+    background-color: #fe2e2e;
+    border-radius: 4px;
+    top: 15px;
+    left: 85%;
+    margin-left: -8px;
+}
+
+.flame5 {
+    border-bottom-left-radius: 45% 35%;
+    border-bottom-right-radius: 45% 35%;
+    box-shadow: 0 -15px 2px 2px #ffc205;
+    background-color: yellow;
+    border-radius: 50%;
+    height: 30px;
+    width: 5px;
+    top: -30px;
+    left: 30%;
+    position: absolute;
+}
+
+.text {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    color: white;
+    font-family: 'Pacifico', cursive;
+}
+.size
+{  margin-top: 2%;
+    margin-left: 10%;
+     margin-right: 10%;
+    width: 80%;
+    height: 700px;
+}
+.image{
+width: 100%;
+height: 700px;
+border-radius: 3px;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    background-color: black;
+}
+
+/* .carousel-item{
+position: relative;
+display: none;
+float: left;
+width: 100%;
+margin-right: -100%;
+
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+transition: transform .6s ease-in-out;
+} */
+
+
+p
+{
+    font-family: 'Otomanopee One',
+    sans-serif;
+    color: #DB1F48;
+    font-weight: bold;
+}
+.btn:hover
+{
+ background-color:rgb(223, 27, 60);
+}
+.poto:hover{
+    border-radius: 8px;
+}
+.poto:hover
+{
+    width: 100%;
+    height: 100%;
+}
+.text1
+{border-radius: 5px;
+    margin-top: 2%;
+  background-color: #A16AE8;
+ text-align: center;
+ margin-bottom: 4%;
+}
+.p1
+{ font-size: large;
+    font-weight: bolder;
+    font-family: 'Otomanopee One',
+    sans-serif;
+    color: #B4FEE7;
+    text-shadow:hotpink;
+}
+.footer
+{background-color: rgb(148, 109, 109);
+    text-align: center;
+}
