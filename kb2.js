@@ -38,6 +38,12 @@ function makeSound(key) {
       var tom3 = new Audio('New folder/Tera Birthday Aaya Hai 1.mp3');
       tom3.play();
       break;
+      case "a":
+       
+      var tom5 = new Audio('New folder/audiokb.mp3');
+      tom5.play();
+      break;
+
 
     case "k":
       
