@@ -1,27 +1,6 @@
-var currentAudio = null;
-
-// Play sound on button click
-document.querySelectorAll(".b1").forEach(function (button) {
-  button.addEventListener("click", function () {
-    var key = this.classList[2]; // e.g., 'h', 'b', 'd'
-    makeSound(key);
-  });
-});
-
-// Listen to physical keyboard
-document.addEventListener("keypress", function (event) {
-  makeSound(event.key.toLowerCase());
-});
-
-// Listen to mobile on-screen keyboard using input
-document.getElementById("hiddenInput").addEventListener("input", function () {
-  const val = this.value.toLowerCase();
-  makeSound(val);
-  this.value = ""; // clear input for next key
-});
+let currentAudio = null;
 
 function makeSound(key) {
-  // Stop previous sound
   if (currentAudio) {
     currentAudio.pause();
     currentAudio.currentTime = 0;
@@ -50,7 +29,27 @@ function makeSound(key) {
   currentAudio.play();
 }
 
-// Re-focus input when page loads
+// For buttons
+document.querySelectorAll(".b1").forEach(function (button) {
+  button.addEventListener("click", function () {
+    const key = this.classList[1]; // h, b, etc.
+    makeSound(key);
+  });
+});
+
+// For physical keyboard
+document.addEventListener("keypress", function (e) {
+  makeSound(e.key.toLowerCase());
+});
+
+// For mobile on-screen keyboard
+const input = document.getElementById("hiddenInput");
+input.addEventListener("input", function () {
+  makeSound(this.value.toLowerCase());
+  this.value = "";
+});
+
+// 👉 Focus hidden input when user taps ANYWHERE
 document.addEventListener("click", function () {
-  input.focus(); // After user taps anywhere
+  input.focus(); // show keyboard on tap
 });
