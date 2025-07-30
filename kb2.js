@@ -51,8 +51,6 @@ function makeSound(key) {
 }
 
 // Re-focus input when page loads
-window.addEventListener("load", function () {
-  setTimeout(() => {
-    document.getElementById("hiddenInput").focus();
-  }, 300);
+document.addEventListener("click", function () {
+  input.focus(); // After user taps anywhere
 });
