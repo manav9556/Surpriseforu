@@ -1,80 +1,58 @@
-var numberOfDrumButtons = document.querySelectorAll(".b1").length;
+var currentAudio = null;
 
-for (var i = 0; i < numberOfDrumButtons; i++) {
-
-  document.querySelectorAll(".b1")[i].addEventListener("click", function() {
-
-    var buttonInnerHTML = this.innerHTML;
-
-    makeSound(buttonInnerHTML);
-
-    
-
+// Play sound on button click
+document.querySelectorAll(".b1").forEach(function (button) {
+  button.addEventListener("click", function () {
+    var key = this.classList[2]; // e.g., 'h', 'b', 'd'
+    makeSound(key);
   });
-
-document.addEventListener("keypress", function(event) {
-
-  makeSound(event.key);
-
-
-
 });
+
+// Listen to physical keyboard
+document.addEventListener("keypress", function (event) {
+  makeSound(event.key.toLowerCase());
+});
+
+// Listen to mobile on-screen keyboard using input
+document.getElementById("hiddenInput").addEventListener("input", function () {
+  const val = this.value.toLowerCase();
+  makeSound(val);
+  this.value = ""; // clear input for next key
+});
+
 function makeSound(key) {
+  // Stop previous sound
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
 
   switch (key) {
     case "h":
-      var tom1 = new Audio("New folder/bar-bar-din-ye-aaye-tum-jio-hazaro-saal_1.mp3");
-      tom1.play();
+      currentAudio = new Audio("New folder/bar-bar-din-ye-aaye-tum-jio-hazaro-saal_1.mp3");
       break;
-
     case "b":
-        
-      var tom2 = new Audio("New folder/tum-mile-tum-mile-1.mp3");
-      tom2.play();
+      currentAudio = new Audio("New folder/tum-mile-tum-mile-1.mp3");
       break;
-
     case "d":
-       
-      var tom3 = new Audio('New folder/Tera Birthday Aaya Hai 1.mp3');
-      tom3.play();
+      currentAudio = new Audio("New folder/Tera Birthday Aaya Hai 1.mp3");
       break;
-      case "a":
-       
-      var tom5 = new Audio('New folder/audiokb.mp3');
-      tom5.play();
+    case "a":
+      currentAudio = new Audio("New folder/audiokb.mp3");
       break;
-
-
     case "k":
-      
-      var tom4= new Audio('New folder/hum-dono-yun-mile.mp3');
-      tom4.play();
+      currentAudio = new Audio("New folder/hum-dono-yun-mile.mp3");
       break;
-    default: console.log(key);
-
+    default:
+      return;
   }
+
+  currentAudio.play();
 }
 
-// var bt1=document.querySelector(".b1").addEventListener("click", function(){
-//   var buttonInnerHTML = this.innerHTML;
-// makeSound1(buttonInnerHTML);
-// pauseVid(buttonInnerHTML)
-// });
-// function makeSound1()
-// {
-//   var audio = new Audio("New folder/tum jiyo hazaro saal .mp3");
-// audio.play(); 
-
-// }
-// document.querySelector(".b2").addEventListener("click", function(){
-//   var buttonInnerHTML2 = this.innerHTML;
-// makeSound(buttonInnerHTML2);
-//  makeSound1()==false
-
-// });
-// function makeSound()
-// {
-//   var audio = new Audio("New folder/Tum Mile - Tum Mile 128 Kbps.mp3");
-// audio.play(); 
-}
-// 
+// Re-focus input when page loads
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    document.getElementById("hiddenInput").focus();
+  }, 300);
+});
